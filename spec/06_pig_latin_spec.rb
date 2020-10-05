@@ -51,3 +51,20 @@ describe "#translate" do
   # * retain the punctuation from the original phrase
 
 end
+
+describe "#translate_case_sensitive" do
+	it "prints a random capitalized word with a capital" do
+		s=translate_case_sensitive("Apple")
+		expect(s).to eq("Appleay")
+	end
+	
+	it "keeps the capital even if the word begins with a consonant" do
+		s=translate_case_sensitive("Square")
+		expect(s).to eq("Aresquay")
+	end
+
+	it "keeps the capital even if the word begins with two consonants" do
+		s=translate_case_sensitive("Thespian")
+		expect(s).to eq("Espianthay")
+	end
+end
